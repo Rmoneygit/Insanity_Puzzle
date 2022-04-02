@@ -7,7 +7,7 @@
 }
 
 .padding {
-    padding-top: 100px;
+    padding-top: 75px;
 }
 
 .circle {
@@ -34,6 +34,15 @@
     display: grid;
     grid-template-columns: 10%;
     grid-template-rows: 33%;
+}
+
+.message {
+    text-align: center;
+    text-indent: 10px;
+}
+
+.title {
+    text-align: center;
 }
 
 .item1 {
