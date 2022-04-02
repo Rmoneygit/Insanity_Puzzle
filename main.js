@@ -32,6 +32,9 @@ document.addEventListener("click", (e) => {
                     }
                 }
             }
+            if(isSolution()) {
+                window.alert("You solved the puzzle! Well done!");
+            }
         }
     }
 });
@@ -74,4 +77,24 @@ function determineLegality(color, from, to) {
     }
 
     return legal;
+}
+
+function isSolution() {
+    let holes = document.querySelectorAll("[data-hole]");
+    let isSol = true;
+
+    for(var i = 0; i < 10; i++) {
+        if(i < 4) {
+            if(!holes[i].classList.contains("blue")) {
+                isSol = false;
+            }
+        }
+        if(i > 6) {
+            if(!holes[i].classList.contains("red")) {
+                isSol = false;
+            }
+        }
+    }
+
+    return isSol;
 }
