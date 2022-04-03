@@ -2,12 +2,18 @@ document.addEventListener("click", (e) => {
     cList = e.target.classList;
     let selectedItems = document.getElementsByClassName("selected");
     if(cList.contains("circle")) {
-        if(cList.contains("red") || cList.contains("blue")) {
+        let color = "";
+        color = cList.contains("red") ? "red" : color;
+        color = cList.contains("blue") ? "blue" : color;
+        if(color === "red" || color === "blue") {
             if(selectedItems.length === 0) {
                 cList.add("selected");
+                let from = parseInt(e.target.dataset.hole);
+                addMovementHighlights(color, from);
             }
             else if(cList.contains("selected")) {
-              cList.remove("selected");  
+              cList.remove("selected");
+              removeMovementHighlights();
             }
 
         }
@@ -32,6 +38,7 @@ document.addEventListener("click", (e) => {
                     }
                 }
             }
+            removeMovementHighlights();
             if(isSolution()) {
                 window.alert("You solved the puzzle! Well done!");
             }
@@ -97,4 +104,22 @@ function isSolution() {
     }
 
     return isSol;
+}
+
+function addMovementHighlights(color, from) {
+    let holes = document.querySelectorAll("[data-hole]");
+
+    for(var i = 0; i < 10; i++) {
+        if(determineLegality(color, from, i)) {
+            holes[i].classList.add("movement-highlight");
+        }
+    }
+}
+
+function removeMovementHighlights() {
+    let holes = document.querySelectorAll("[data-hole]");
+
+    for(var i = 0; i < 10; i++) {
+        holes[i].classList.remove("movement-highlight");
+    }
 }
