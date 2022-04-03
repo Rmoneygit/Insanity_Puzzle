@@ -6,7 +6,9 @@ This project is a recreation of an interesting puzzle, which I found by chance a
 ## Game Pieces
 The puzzle consists of a small wooden board with 10 holes in it, and 8 pegs (4 blue and 4 red).
 
-![game_pieces.JPG](images/game_pieces.JPG)
+<img src="images/game_pieces.JPG" alt="game_pieces.JPG" width="600"/>
+
+<img src="images/Web_Screenshot.PNG" alt="web_screenshot.PNG" width="600"/>
 
 ## Rules
 This is a single-player game. The 4 red pegs are placed in the leftmost holes, and the 4 blue pegs in the rightmost holes. 
