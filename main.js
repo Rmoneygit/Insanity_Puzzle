@@ -96,7 +96,7 @@ function isSolution() {
                 isSol = false;
             }
         }
-        if(i > 6) {
+        if(i > 5) {
             if(!holes[i].classList.contains("red")) {
                 isSol = false;
             }
@@ -120,6 +120,24 @@ function removeMovementHighlights() {
     let holes = document.querySelectorAll("[data-hole]");
 
     for(var i = 0; i < 10; i++) {
+        holes[i].classList.remove("movement-highlight");
+    }
+}
+
+function resetBoard() {
+    let holes = document.querySelectorAll("[data-hole]");
+    for(var i = 0; i < 10; i++) {
+
+        if(i < 4) {
+            holes[i].classList.add("red")
+        }
+        else if(6 > i  && i >= 4) {
+            holes[i].classList.remove("red");
+            holes[i].classList.remove("blue");
+        }
+        else {
+            holes[i].classList.add("blue")
+        }
         holes[i].classList.remove("movement-highlight");
     }
 }

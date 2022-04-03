@@ -10,6 +10,10 @@
     padding-top: 75px;
 }
 
+.small-padding {
+    padding-top: 15px;
+}
+
 .circle {
     margin:auto;
     height: 25px;
@@ -189,4 +193,8 @@ footer {
     grid-row: 1;
     color: blue;
     font-size: 25px;
+}
+
+.mid {
+    text-align: center;
 }
