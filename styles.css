@@ -36,6 +36,19 @@
     grid-template-rows: 33%;
 }
 
+.links {
+    margin: auto;
+    text-align: center;
+}
+
+footer {
+    position:absolute;
+    bottom:0;
+    width:99%;
+    height:60px;   /* Height of the footer */
+    text-align: center;
+ }
+
 .message {
     text-align: center;
     text-indent: 10px;
